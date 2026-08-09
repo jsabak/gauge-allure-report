@@ -2,6 +2,14 @@
 
 All notable changes are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.1](https://github.com/jsabak/gauge-allure-report/compare/v0.1.0...v0.1.1) (2026-08-09)
+
+
+### Bug Fixes
+
+* **ci:** derive package version from plugin descriptor ([9a61795](https://github.com/jsabak/gauge-allure-report/commit/9a617958c0f46eb87c5db8fb668df4483147d8ed))
+* **ci:** publish immutable releases after uploading assets ([713e482](https://github.com/jsabak/gauge-allure-report/commit/713e482c2ee37a48247e029dea4535e27ce24ec0))
+
 ## 0.1.0 (2026-08-09)
 
 
