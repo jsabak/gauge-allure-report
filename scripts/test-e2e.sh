@@ -3,7 +3,7 @@
 set -eu
 
 runner="${1:-python}"
-version="${VERSION:-0.1.0}"
+version="${VERSION:-}"
 project_root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 run_root="$project_root/.tools/e2e/$(date +%Y%m%d%H%M%S)-$$"
 gauge_home="$run_root/gauge-home"
@@ -11,6 +11,9 @@ mkdir -p "$gauge_home" "$project_root/bin" "$project_root/dist"
 export GAUGE_HOME="$gauge_home"
 
 cd "$project_root"
+if [ -z "$version" ]; then
+  version="$(python -c 'import json; print(json.load(open("plugin.json", encoding="utf-8"))["version"])')"
+fi
 ldflags="-s -w -X github.com/jsabak/gauge-allure-report/internal/version.Version=$version -X github.com/jsabak/gauge-allure-report/internal/version.Commit=${COMMIT:-unknown} -X github.com/jsabak/gauge-allure-report/internal/version.BuildDate=${BUILD_DATE:-unknown} -X github.com/jsabak/gauge-allure-report/internal/version.Dirty=false -X github.com/jsabak/gauge-allure-report/internal/version.PackageMarker=gauge-allure-report-package-version:$version"
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags "$ldflags" -o bin/allure-report ./cmd/allure-report
 go run ./build/package -binary bin/allure-report -os linux -arch amd64 -version "$version" -out dist
