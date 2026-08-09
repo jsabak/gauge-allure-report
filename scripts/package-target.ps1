@@ -3,13 +3,16 @@
 param(
     [Parameter(Mandatory)][ValidateSet("linux", "darwin", "windows")][string]$OS,
     [Parameter(Mandatory)][ValidateSet("386", "amd64", "arm64")][string]$Arch,
-    [string]$Version = "0.1.0",
+    [string]$Version = "",
     [string]$Commit = "ci",
     [string]$BuildDate = "1970-01-01T00:00:00Z",
     [switch]$Smoke
 )
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($Version)) {
+    $Version = (Get-Content -LiteralPath (Join-Path $ProjectRoot "plugin.json") -Raw | ConvertFrom-Json).version
+}
 $OriginalGOOS, $OriginalGOARCH, $OriginalCGO = $env:GOOS, $env:GOARCH, $env:CGO_ENABLED
 $env:GOOS, $env:GOARCH, $env:CGO_ENABLED = $OS, $Arch, "0"
 $Suffix = if ($OS -eq "windows") { ".exe" } else { "" }

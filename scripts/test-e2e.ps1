@@ -2,12 +2,15 @@
 [CmdletBinding()]
 param(
     [ValidateSet("python", "js")][string]$Runner = "python",
-    [string]$Version = "0.1.0",
+    [string]$Version = "",
     [string]$PythonCommand = "",
     [switch]$SkipAllure
 )
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($Version)) {
+    $Version = (Get-Content -LiteralPath (Join-Path $ProjectRoot "plugin.json") -Raw | ConvertFrom-Json).version
+}
 $RunRoot = Join-Path $ProjectRoot (".tools\e2e\" + [guid]::NewGuid().ToString("N"))
 $GaugeHome = Join-Path $RunRoot "gauge-home"
 $OriginalGaugeHome = $env:GAUGE_HOME
