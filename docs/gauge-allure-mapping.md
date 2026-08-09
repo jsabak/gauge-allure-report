@@ -36,11 +36,11 @@ Some runners leave protobuf `errorType` at its default `ASSERTION` for every exc
 
 Canonical identity is `${project}::${project-relative-spec-path}::${scenario-id-or-span-and-heading}` with normalized `/` separators. Absolute checkout prefixes, stream/runner allocation, table values, and retry number do not affect `testCaseId`.
 
-- `testCaseId`: lowercase SHA-256 hex of canonical scenario identity.
-- `historyId`: lowercase SHA-256 hex of the test case ID plus sorted logical parameters after privacy/history policy.
-- `uuid`: random UUID v4 per attempt, reused during live/final reconciliation.
-- table row values: parameters and history inputs, not test case identity.
-- retry: excluded `retry` parameter and `gauge.retry` label; not a history input.
+* `testCaseId`: lowercase SHA-256 hex of canonical scenario identity.
+* `historyId`: lowercase SHA-256 hex of the test case ID plus sorted logical parameters after privacy/history policy.
+* `uuid`: random UUID v4 per attempt, reused during live/final reconciliation.
+* table row values: parameters and history inputs, not test case identity.
+* retry: excluded `retry` parameter and `gauge.retry` label; not a history input.
 
 Earlier retry attempts remain separate result files with the same logical identifiers, allowing Allure to group them.
 

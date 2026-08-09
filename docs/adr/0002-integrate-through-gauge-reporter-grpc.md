@@ -1,7 +1,7 @@
 # ADR 0002: Integrate through Gauge reporter gRPC
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

@@ -1,7 +1,7 @@
 # ADR 0010: Deterministic Gauge packaging and repository distribution
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

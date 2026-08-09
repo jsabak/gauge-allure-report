@@ -1,7 +1,7 @@
 # ADR 0004: Hybrid live events and final suite reconciliation
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 
