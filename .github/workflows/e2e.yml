@@ -1,0 +1,61 @@
+name: E2E
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gauge-python:
+    name: Gauge ${{ matrix.gauge }} / Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - gauge: 1.6.22
+            python: '3.10'
+            skip_allure: 'true'
+          - gauge: 1.6.35
+            python: '3.14'
+            skip_allure: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.0
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.5'
+          cache: true
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: test/e2e/gauge-python/projects/main/requirements.txt
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24.18.0'
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.0.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: getgauge/setup-gauge@159e01e975eeae8bd1a097017590fefbc36e2d4e # audited 2026-08-07
+        with:
+          gauge-version: ${{ matrix.gauge }}
+      - name: Run native reporter E2E and generator conformance
+        env:
+          SKIP_ALLURE: ${{ matrix.skip_allure }}
+        run: sh scripts/test-e2e.sh python
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.0
+        if: failure()
+        with:
+          name: e2e-diagnostics-gauge-${{ matrix.gauge }}-python-${{ matrix.python }}
+          path: .tools/e2e/
+          include-hidden-files: true
+          if-no-files-found: warn

@@ -1,0 +1,10 @@
+module,version,license
+github.com/allure-framework/allure-go/commons,v1.2.1,Apache-2.0
+github.com/getgauge/gauge-proto/go/gauge_messages,v0.0.0-20260806060657-8a89f7a070a9,Apache-2.0
+golang.org/x/net,v0.55.0,BSD-3-Clause
+golang.org/x/sys,v0.45.0,BSD-3-Clause
+golang.org/x/text,v0.37.0,BSD-3-Clause
+google.golang.org/genproto/googleapis/rpc,v0.0.0-20260526163538-3dc84a4a5aaa,Apache-2.0
+google.golang.org/grpc,v1.83.0,Apache-2.0
+google.golang.org/protobuf,v1.36.11,BSD-3-Clause
+gopkg.in/yaml.v3,v3.0.1,MIT OR Apache-2.0

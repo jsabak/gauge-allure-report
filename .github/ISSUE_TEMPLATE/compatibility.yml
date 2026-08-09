@@ -1,0 +1,31 @@
+name: Compatibility problem
+description: Report a Gauge, runner, platform, or Allure version gap
+title: "compat: "
+labels: ["type:compatibility", "status:needs-triage"]
+body:
+  - type: input
+    id: matrix
+    attributes:
+      label: Exact compatibility tuple
+      placeholder: Gauge 1.6.35 / Python runner 0.5.1 / Python 3.14.6 / linux amd64 / Allure 3.14.3
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Installation and execution commands
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized doctor output, logs, and artifact inventory
+    validations:
+      required: true
+  - type: dropdown
+    id: regression
+    attributes:
+      label: Previously working?
+      options: [Unknown, "No", "Yes"]
+    validations:
+      required: true

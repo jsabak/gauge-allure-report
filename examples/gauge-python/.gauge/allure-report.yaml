@@ -1,0 +1,5 @@
+results_dir: reports/allure-results
+clean_results: true
+attach_messages: true
+attach_screenshots: true
+categories_profile: gauge-default

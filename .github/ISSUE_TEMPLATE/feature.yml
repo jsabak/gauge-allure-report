@@ -1,0 +1,31 @@
+name: Feature request
+description: Propose a focused reporter capability
+title: "feature: "
+labels: ["type:feature", "status:needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the user need, not only a preferred implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and compatibility impact
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Architecture
+      options:
+        - label: This remains a Gauge reporter feature and does not require production coupling to a language runner.
+          required: true

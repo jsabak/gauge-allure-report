@@ -1,0 +1,71 @@
+{
+  "uuid": "00000000-0000-4000-8000-000000000001",
+  "historyId": "7198f1f47e92fe6f72e6cd48687850e8a29122cbde8aaa3ee09a7673f6ffb0d3",
+  "testCaseId": "5968f515f21b06ea8ea989d42a0c586ed82ccf4ca738348ac6c0600c36a226de",
+  "name": "passes",
+  "fullName": "demo::specs/pass.spec::s1",
+  "status": "passed",
+  "stage": "finished",
+  "labels": [
+    {
+      "name": "framework",
+      "value": "Gauge"
+    },
+    {
+      "name": "language",
+      "value": "python"
+    },
+    {
+      "name": "host",
+      "value": "test-host"
+    },
+    {
+      "name": "thread",
+      "value": "stream-0/runner-0"
+    },
+    {
+      "name": "parentSuite",
+      "value": "demo"
+    },
+    {
+      "name": "suite",
+      "value": "Passing"
+    },
+    {
+      "name": "package",
+      "value": "specs/pass"
+    },
+    {
+      "name": "tag",
+      "value": "smoke"
+    },
+    {
+      "name": "tag",
+      "value": "allure.label.owner:alice"
+    },
+    {
+      "name": "owner",
+      "value": "alice"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Steps",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "a passing step",
+          "status": "passed",
+          "stage": "finished",
+          "start": 1767225600000,
+          "stop": 1767225600010
+        }
+      ],
+      "start": 1767225600000,
+      "stop": 1767225600010
+    }
+  ],
+  "start": 1767225600000,
+  "stop": 1767225600010
+}

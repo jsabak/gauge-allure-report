@@ -1,0 +1,6 @@
+{
+  "Language": "js",
+  "Plugins": [
+    "allure-report"
+  ]
+}

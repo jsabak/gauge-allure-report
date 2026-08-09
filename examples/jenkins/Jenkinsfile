@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+  stages {
+    stage('Gauge') {
+      steps {
+        sh 'gauge run specs'
+      }
+    }
+  }
+  post {
+    always {
+      allure includeProperties: false, jdk: '', results: [[path: 'reports/allure-results']]
+      archiveArtifacts artifacts: 'reports/allure-results/**', allowEmptyArchive: true
+    }
+  }
+}

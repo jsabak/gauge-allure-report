@@ -1,0 +1,35 @@
+results_dir: reports/allure-results
+clean_results: true
+compatibility: allure2-and-3
+write_mode: streaming
+strict: false
+log_level: info
+attach_screenshots: true
+attach_messages: true
+attach_tables: true
+max_attachment_bytes: 104857600
+follow_symlinks: false
+allow_external_attachments: false
+context_mode: grouped-steps
+teardown_mode: grouped-steps
+hook_mode: fixtures
+behavior_from_spec: false
+issue_link_pattern: https://issues.example.invalid/browse/{}
+tms_link_pattern: https://tms.example.invalid/case/{}
+environment_allowlist:
+  - TEST_REGION
+promote_parameters:
+  - account_id
+mask_parameters:
+  - password
+hide_parameters:
+  - token
+exclude_history_parameters:
+  - build_timestamp
+redact:
+  - replace-me-with-a-secret-value
+executor_auto: true
+categories_profile: gauge-default
+maximum_nesting_depth: 100
+diagnostic_proto_dump: false
+

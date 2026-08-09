@@ -1,0 +1,21 @@
+results_dir: reports/allure-results
+clean_results: true
+compatibility: allure2-and-3
+write_mode: streaming
+strict: true
+attach_screenshots: true
+attach_messages: true
+attach_tables: true
+categories_profile: gauge-default
+environment_allowlist:
+  - TEST_REGION
+promote_parameters:
+  - account_id
+mask_parameters:
+  - password
+hide_parameters:
+  - token
+exclude_history_parameters:
+  - build_timestamp
+issue_link_pattern: https://issues.example.invalid/browse/{}
+tms_link_pattern: https://tms.example.invalid/case/{}

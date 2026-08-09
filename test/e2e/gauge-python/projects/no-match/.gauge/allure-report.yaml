@@ -1,0 +1,3 @@
+results_dir: reports/allure-results
+clean_results: true
+strict: true

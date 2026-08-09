@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: gomod
+    directory: /
+    schedule: { interval: weekly }
+    labels: ["area:ci", "type:compatibility"]
+    groups:
+      go-runtime:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }
+    labels: ["area:ci"]
+  - package-ecosystem: pip
+    directory: /examples/gauge-python
+    schedule: { interval: monthly }
+    labels: ["type:compatibility"]
+  - package-ecosystem: pip
+    directory: /test/e2e/gauge-python/projects/main
+    schedule: { interval: monthly }
+    labels: ["type:compatibility"]
+  - package-ecosystem: npm
+    directory: /tools/allure
+    schedule: { interval: weekly }
+    labels: ["type:compatibility", "area:ci"]

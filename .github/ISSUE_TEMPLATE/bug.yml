@@ -1,0 +1,45 @@
+name: Bug report
+description: Report reproducible incorrect reporter behavior
+title: "bug: "
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report security vulnerabilities here; use SECURITY.md.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Reporter, Gauge Core, language runner, OS/architecture, and Allure generator.
+      placeholder: allure-report 0.1.0; Gauge 1.6.35; python 0.5.1; Windows amd64
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Commands, flags, sanitized specification, configuration, and step implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and diagnostics
+      description: Include doctor output and relevant Gauge stderr/logs; remove secrets.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and troubleshooting.
+          required: true
+        - label: I removed credentials and sensitive test data.
+          required: true

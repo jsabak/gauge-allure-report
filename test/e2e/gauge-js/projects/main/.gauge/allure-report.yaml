@@ -1,0 +1,4 @@
+results_dir: reports/allure-results
+clean_results: true
+strict: true
+categories_profile: gauge-default

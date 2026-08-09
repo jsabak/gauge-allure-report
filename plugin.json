@@ -1,0 +1,33 @@
+{
+  "capabilities": [
+    "grpc_support"
+  ],
+  "command": {
+    "darwin": [
+      "bin/allure-report"
+    ],
+    "linux": [
+      "bin/allure-report"
+    ],
+    "windows": [
+      "bin/allure-report.exe"
+    ]
+  },
+  "description": "Native Allure Results reporter for Gauge",
+  "gaugeVersionSupport": {
+    "maximum": "",
+    "minimum": "1.6.22"
+  },
+  "id": "allure-report",
+  "install": {
+    "darwin": [],
+    "linux": [],
+    "windows": []
+  },
+  "name": "Allure Report",
+  "scope": [
+    "Execution"
+  ],
+  "version": "0.1.0"
+}
+

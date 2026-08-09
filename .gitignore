@@ -1,0 +1,30 @@
+# Build and release output
+/bin/
+/dist/
+/coverage.out
+/coverage.html
+/coverage
+/core-coverage
+/*.cover
+
+# Local tools and caches
+/.tools/
+**/.tools/
+/.cache/
+/.gopath/
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+/.lycheecache
+
+# Gauge and report output
+/.gauge/logs/
+/reports/
+**/allure-results/
+**/allure-report/
+
+# Editors and operating systems
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db

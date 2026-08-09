@@ -1,0 +1,11 @@
+{
+  "name": "gauge-allure-report-conformance-tools",
+  "private": true,
+  "description": "Pinned Allure generators used only for release conformance",
+  "devDependencies": {
+    "allure": "3.14.3"
+  },
+  "overrides": {
+    "adm-zip": "0.6.0"
+  }
+}

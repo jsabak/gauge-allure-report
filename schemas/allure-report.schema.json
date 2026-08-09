@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jsabak/gauge-allure-report/schemas/allure-report.schema.json",
+  "title": "Gauge Allure Report configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "results_dir": { "type": "string", "minLength": 1 },
+    "clean_results": { "type": "boolean", "default": true },
+    "allow_clean_non_owned": { "type": "boolean", "default": false },
+    "compatibility": { "enum": ["allure2-and-3", "allure3"], "default": "allure2-and-3" },
+    "write_mode": { "enum": ["streaming", "suite-final"], "default": "streaming" },
+    "strict": { "type": "boolean", "default": false },
+    "log_level": { "enum": ["debug", "info", "warn", "error"], "default": "info" },
+    "attach_screenshots": { "type": "boolean", "default": true },
+    "attach_messages": { "type": "boolean", "default": true },
+    "attach_tables": { "type": "boolean", "default": true },
+    "max_attachment_bytes": { "type": "integer", "minimum": 1, "default": 104857600 },
+    "follow_symlinks": { "type": "boolean", "default": false },
+    "allow_external_attachments": { "type": "boolean", "default": false },
+    "context_mode": { "enum": ["grouped-steps", "flat", "fixtures"], "default": "grouped-steps" },
+    "teardown_mode": { "enum": ["grouped-steps", "flat", "fixtures"], "default": "grouped-steps" },
+    "hook_mode": { "const": "fixtures", "default": "fixtures" },
+    "behavior_from_spec": { "type": "boolean", "default": false },
+    "issue_link_pattern": { "type": "string" },
+    "tms_link_pattern": { "type": "string" },
+    "generic_link_pattern": { "type": "string" },
+    "environment_allowlist": { "$ref": "#/$defs/stringList" },
+    "promote_parameters": { "$ref": "#/$defs/stringList" },
+    "mask_parameters": { "$ref": "#/$defs/stringList" },
+    "hide_parameters": { "$ref": "#/$defs/stringList" },
+    "exclude_history_parameters": { "$ref": "#/$defs/stringList" },
+    "redact": { "$ref": "#/$defs/stringList" },
+    "executor_auto": { "type": "boolean", "default": true },
+    "executor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" }, "type": { "type": "string" },
+        "build_name": { "type": "string" }, "build_url": { "type": "string", "format": "uri" },
+        "report_name": { "type": "string" }, "report_url": { "type": "string", "format": "uri" }
+      }
+    },
+    "categories_file": { "type": "string" },
+    "categories_profile": { "enum": ["none", "gauge-default"], "default": "none" },
+    "source_link_template": { "type": "string" },
+    "maximum_nesting_depth": { "type": "integer", "minimum": 1, "maximum": 1000, "default": 100 },
+    "diagnostic_proto_dump": { "type": "boolean", "default": false }
+  },
+  "$defs": {
+    "stringList": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+  }
+}
+

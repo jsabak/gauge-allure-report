@@ -1,0 +1,10 @@
+cache = true
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+accept = [200, 206, 429]
+exclude = [
+  '^https://github\.com/jsabak/gauge-allure-report/compare/v[0-9]+\.[0-9]+\.[0-9]+\.\.\.HEAD$',
+  '^https://github\.com/jsabak/gauge-allure-report/releases/download/',
+  '^mailto:'
+]
