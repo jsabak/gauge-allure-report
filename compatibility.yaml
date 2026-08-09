@@ -1,5 +1,5 @@
 schema_version: 1
-last_verified: 2026-08-07
+last_verified: 2026-08-07T00:00:00.000Z
 project_version: 0.1.0
 gauge:
   minimum:
@@ -16,8 +16,11 @@ gauge:
 runners:
   python:
     version: 0.5.1
-    upstream_tested_python: ["3.10", "3.14"]
-    locally_verified_python: ["3.14.6"]
+    upstream_tested_python:
+      - '3.10'
+      - '3.14'
+    locally_verified_python:
+      - 3.14.6
     evidence: exhaustive Windows E2E
   javascript:
     version: 5.0.7
@@ -27,23 +30,41 @@ allure:
   model: github.com/allure-framework/allure-go/commons@v1.2.1
   allure2:
     version: 2.45.0
-    evidence: official CLI archive checksum verified and Windows report generation passed
+    evidence: >-
+      official CLI archive checksum verified and Windows report generation
+      passed
   allure3:
     version: 3.14.3
     evidence: pinned npm CLI and Windows report generation passed
 platforms:
   windows:
-    build: [x86, x86_64]
+    build:
+      - x86
+      - x86_64
     e2e: x86_64
   linux:
-    build: [x86, x86_64, arm64]
+    build:
+      - x86
+      - x86_64
+      - arm64
     e2e: CI
   darwin:
-    build: [x86_64, arm64]
+    build:
+      - x86_64
+      - arm64
     e2e: package smoke in CI
 platform_notes:
-  - Windows arm64 is intentionally not advertised until a native Gauge runtime smoke test is available.
+  - >-
+    Windows arm64 is intentionally not advertised until a native Gauge runtime
+    smoke test is available.
 known_protocol_limits:
-  - Gauge Core exits before starting reporters when a tag filter matches zero specifications.
-  - Gauge final SuiteExecutionResult stores attempt count while live lifecycle events store a zero-based retry index.
-  - Python and JavaScript runners may leave ProtoExecutionResult.errorType at ASSERTION for unexpected exceptions; diagnostics are classified conservatively.
+  - >-
+    Gauge Core exits before starting reporters when a tag filter matches zero
+    specifications.
+  - >-
+    Gauge final SuiteExecutionResult stores attempt count while live lifecycle
+    events store a zero-based retry index.
+  - >-
+    Python and JavaScript runners may leave ProtoExecutionResult.errorType at
+    ASSERTION for unexpected exceptions; diagnostics are classified
+    conservatively.

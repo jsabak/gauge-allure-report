@@ -2,6 +2,13 @@
 
 All notable changes are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
+## 0.1.0 (2026-08-09)
+
+
+### Features
+
+* prepare first Gauge Allure release ([d7046c4](https://github.com/jsabak/gauge-allure-report/commit/d7046c430aabfce5c1d4dae987508d5823b2b18d))
+
 ## [Unreleased]
 
 ### Added
