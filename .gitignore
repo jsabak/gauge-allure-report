@@ -22,6 +22,8 @@
 /reports/
 **/allure-results/
 **/allure-report/
+!cmd/allure-report/
+!cmd/allure-report/**
 
 # Editors and operating systems
 /.idea/
