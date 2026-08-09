@@ -1,7 +1,7 @@
 # ADR 0001: Use Go for the Gauge reporter
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

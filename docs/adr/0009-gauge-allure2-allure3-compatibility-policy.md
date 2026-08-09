@@ -1,7 +1,7 @@
 # ADR 0009: Gauge, Allure 2, and Allure 3 compatibility policy
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

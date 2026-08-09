@@ -8,13 +8,13 @@
 
 ## Verification
 
-- [ ] `go test ./...`
-- [ ] `go vet ./...`
-- [ ] `go test -race ./...` (or reason not run)
-- [ ] Relevant Gauge E2E/package/Allure conformance (or reason not run)
-- [ ] Documentation/changelog/compatibility matrix updated when user-visible
-- [ ] No credentials, generated reports, or local tool output included
-- [ ] Commits include `Signed-off-by` DCO lines
+* [ ] `go test ./...`
+* [ ] `go vet ./...`
+* [ ] `go test -race ./...` (or reason not run)
+* [ ] Relevant Gauge E2E/package/Allure conformance (or reason not run)
+* [ ] Documentation/changelog/compatibility matrix updated when user-visible
+* [ ] No credentials, generated reports, or local tool output included
+* [ ] Commits include `Signed-off-by` DCO lines
 
 ## Evidence
 

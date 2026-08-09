@@ -1,7 +1,7 @@
 # ADR 0011: Best-effort and strict error handling
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

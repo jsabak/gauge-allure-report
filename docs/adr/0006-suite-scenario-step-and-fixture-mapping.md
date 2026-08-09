@@ -1,7 +1,7 @@
 # ADR 0006: Map suites, scenarios, steps, and fixtures natively
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

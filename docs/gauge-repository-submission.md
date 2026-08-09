@@ -4,11 +4,11 @@
 
 ## Preconditions
 
-- GitHub repository and `v0.1.0` release exist at the URLs encoded in the metadata.
-- Every listed Windows/Linux/macOS architecture asset exists and passes `build/verify`.
-- `plugin.json`, install metadata, changelog, and tag agree on the version and Gauge support range.
-- Checksums, license, security policy, source tag, and reproducible build instructions are public.
-- Minimum and latest Gauge compatibility jobs have passed.
+* GitHub repository and `v0.1.0` release exist at the URLs encoded in the metadata.
+* Every listed Windows/Linux/macOS architecture asset exists and passes `build/verify`.
+* `plugin.json`, install metadata, changelog, and tag agree on the version and Gauge support range.
+* Checksums, license, security policy, source tag, and reproducible build instructions are public.
+* Minimum and latest Gauge compatibility jobs have passed.
 
 ## Submission
 

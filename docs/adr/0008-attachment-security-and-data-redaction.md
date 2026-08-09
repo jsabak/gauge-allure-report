@@ -1,7 +1,7 @@
 # ADR 0008: Secure attachments and data redaction
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

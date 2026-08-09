@@ -1,7 +1,7 @@
 # ADR 0003: Use the official Allure model behind a writer boundary
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 

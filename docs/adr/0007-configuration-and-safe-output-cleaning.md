@@ -1,7 +1,7 @@
 # ADR 0007: Typed configuration and safe output cleaning
 
-- Status: Accepted
-- Date: 2026-08-07
+* Status: Accepted
+* Date: 2026-08-07
 
 ## Context
 
