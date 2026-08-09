@@ -2,11 +2,11 @@
 
 ## Prerequisites
 
-- Go 1.26.x
-- Gauge Core for E2E
-- Python 3.10 or 3.14 plus Gauge Python 0.5.1 for the primary fixture
-- Node.js 24 plus Gauge JavaScript 5.0.7 for the independence smoke test
-- Java as required by Allure 2 CLI
+* Go 1.26.x
+* Gauge Core for E2E
+* Python 3.10 or 3.14 plus Gauge Python 0.5.1 for the primary fixture
+* Node.js 24 plus Gauge JavaScript 5.0.7 for the independence smoke test
+* Java as required by Allure 2 CLI
 
 Clone, download modules, and run the fast checks:
 

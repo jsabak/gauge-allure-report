@@ -33,11 +33,11 @@ Runtime modules are pinned in `go.mod`/`go.sum`. The official Allure model is us
 
 Primary sources:
 
-- <https://github.com/getgauge/gauge>
-- <https://github.com/getgauge/gauge-proto>
-- <https://github.com/getgauge/gauge-python>
-- <https://github.com/getgauge/gauge-js>
-- <https://github.com/getgauge/gauge-repository>
-- <https://github.com/allure-framework/allure-go>
-- <https://allurereport.org/docs/how-it-works/>
-- <https://allurereport.org/docs/integrations-jenkins/>
+* <https://github.com/getgauge/gauge>
+* <https://github.com/getgauge/gauge-proto>
+* <https://github.com/getgauge/gauge-python>
+* <https://github.com/getgauge/gauge-js>
+* <https://github.com/getgauge/gauge-repository>
+* <https://github.com/allure-framework/allure-go>
+* <https://allurereport.org/docs/how-it-works/>
+* <https://allurereport.org/docs/integrations-jenkins/>
