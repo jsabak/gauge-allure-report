@@ -7,7 +7,11 @@ version="${VERSION:-}"
 project_root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 run_root="$project_root/.tools/e2e/$(date +%Y%m%d%H%M%S)-$$"
 gauge_home="$run_root/gauge-home"
+default_gauge_home="${GAUGE_HOME:-$HOME/.gauge}"
 mkdir -p "$gauge_home" "$project_root/bin" "$project_root/dist"
+if [ -d "$default_gauge_home/config" ]; then
+  cp -R "$default_gauge_home/config" "$gauge_home/config"
+fi
 export GAUGE_HOME="$gauge_home"
 
 cd "$project_root"
@@ -15,9 +19,17 @@ if [ -z "$version" ]; then
   version="$(python -c 'import json; print(json.load(open("plugin.json", encoding="utf-8"))["version"])')"
 fi
 ldflags="-s -w -X github.com/jsabak/gauge-allure-report/internal/version.Version=$version -X github.com/jsabak/gauge-allure-report/internal/version.Commit=${COMMIT:-unknown} -X github.com/jsabak/gauge-allure-report/internal/version.BuildDate=${BUILD_DATE:-unknown} -X github.com/jsabak/gauge-allure-report/internal/version.Dirty=false -X github.com/jsabak/gauge-allure-report/internal/version.PackageMarker=gauge-allure-report-package-version:$version"
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags "$ldflags" -o bin/allure-report ./cmd/allure-report
-go run ./build/package -binary bin/allure-report -os linux -arch amd64 -version "$version" -out dist
-archive="$project_root/dist/allure-report-$version-linux.x86_64.zip"
+target_os=$(go env GOHOSTOS)
+target_arch=$(go env GOHOSTARCH)
+case "$target_arch" in
+  386) package_arch=x86 ;;
+  amd64) package_arch=x86_64 ;;
+  arm64) package_arch=arm64 ;;
+  *) echo "unsupported native Go architecture: $target_arch" >&2; exit 1 ;;
+esac
+CGO_ENABLED=0 GOOS="$target_os" GOARCH="$target_arch" go build -trimpath -ldflags "$ldflags" -o bin/allure-report ./cmd/allure-report
+go run ./build/package -binary bin/allure-report -os "$target_os" -arch "$target_arch" -version "$version" -out dist
+archive="$project_root/dist/allure-report-$version-$target_os.$package_arch.zip"
 go run ./build/verify -archive "$archive" -version "$version"
 gauge install allure-report --file "$archive"
 gauge install "$runner"
