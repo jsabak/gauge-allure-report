@@ -1,5 +1,5 @@
-github.com/allure-framework/allure-go/commons v1.2.1 h1:eTRr1QFlI66A+/tyUWxpaJC5xZ7gO97kmJEY59QAztg=
-github.com/allure-framework/allure-go/commons v1.2.1/go.mod h1:h+DnKOe9nlqqZFi18LjWq6UVfj3uno5z8itU7+sysAE=
+github.com/allure-framework/allure-go/commons v1.3.0 h1:PJuSpbLxR3ukPyRf4VGAeXzlWmccSzIYMys4WyVJoWY=
+github.com/allure-framework/allure-go/commons v1.3.0/go.mod h1:h+DnKOe9nlqqZFi18LjWq6UVfj3uno5z8itU7+sysAE=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=
 github.com/cespare/xxhash/v2 v2.3.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/getgauge/gauge-proto/go/gauge_messages v0.0.0-20260806060657-8a89f7a070a9 h1:eUuFXpY0QfyzJWXtt4gWRfRJsxG3qMKwt8SfGZiNE8s=
