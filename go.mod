@@ -3,7 +3,7 @@ module github.com/jsabak/gauge-allure-report
 go 1.26.0
 
 require (
-	github.com/allure-framework/allure-go/commons v1.2.1
+	github.com/allure-framework/allure-go/commons v1.3.0
 	github.com/getgauge/gauge-proto/go/gauge_messages v0.0.0-20260806060657-8a89f7a070a9
 	google.golang.org/grpc v1.83.2
 	google.golang.org/protobuf v1.36.12
