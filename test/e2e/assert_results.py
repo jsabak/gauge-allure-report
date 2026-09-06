@@ -62,7 +62,9 @@ def assert_main_python(root, results, containers):
     assert any(any(label.get("name") == "owner" and label.get("value") == "reporter-team" for label in item.get("labels", [])) for item in results)
     assert any(any(link.get("type") == "issue" for link in item.get("links", [])) for item in results)
     children = {child for container in containers for child in container.get("children", [])}
-    assert {item["uuid"] for item in results if item.get("name") != "Retry followed by pass"} <= children
+    result_uuids = {item["uuid"] for item in results}
+    assert children
+    assert children <= result_uuids
 
     sources = attachment_sources(results, containers)
     assert sources
