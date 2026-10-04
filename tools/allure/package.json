@@ -3,7 +3,7 @@
   "private": true,
   "description": "Pinned Allure generators used only for release conformance",
   "devDependencies": {
-    "allure": "3.18.0"
+    "allure": "3.19.1"
   },
   "overrides": {
     "adm-zip": "0.6.0"
