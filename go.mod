@@ -1,6 +1,6 @@
 module github.com/jsabak/gauge-allure-report
 
-go 1.26.0
+go 1.26.9
 
 require (
 	github.com/allure-framework/allure-go/commons v1.3.1
