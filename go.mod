@@ -5,7 +5,7 @@ go 1.26.0
 require (
 	github.com/allure-framework/allure-go/commons v1.3.1
 	github.com/getgauge/gauge-proto/go/gauge_messages v0.0.0-20260901045908-c007667c97bf
-	google.golang.org/grpc v1.85.0-dev
+	google.golang.org/grpc v1.85.0-dev.0.20260825072537-93e31b48545e
 	google.golang.org/protobuf v1.36.12
 	gopkg.in/yaml.v3 v3.0.1
 )
