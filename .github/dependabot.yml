@@ -9,7 +9,7 @@ updates:
         patterns: ["*"]
   - package-ecosystem: github-actions
     directory: /
-    schedule: { interval: weekly }
+    schedule: { interval: monthly }
     labels: ["area:ci"]
   - package-ecosystem: pip
     directory: /examples/gauge-python
