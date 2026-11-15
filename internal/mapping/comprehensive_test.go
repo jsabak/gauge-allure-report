@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
+
 //lint:file-ignore SA1019 Tests deliberately construct deprecated Gauge screenshot fields to verify legacy protocol compatibility.
+
 package mapping
 
 import (
